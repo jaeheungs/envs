@@ -94,14 +94,14 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* ~/*
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm-256color
 RUN echo "Installing system libraries including python"
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && sudo apt-get install -y \
     build-essential pkg-config git curl wget automake cmake libtool ca-certificates vim \
     software-properties-common tmux zsh fonts-powerline \
     libpng-dev libjpeg-dev exuberant-ctags \
     libsecret-1-0 libsecret-1-dev lftp zip libsm6 libxext6 libxrender-dev    
 
 # Locale setting
-ARG LOCALE=ko_KR.UTF-8
+ARG LOCALE=en_US.UTF-8
 RUN apt-get update && apt-get install -y locales && locale-gen $LOCALE
 ENV LANGUAGE=$LOCALE
 ENV LANG=$LOCALE
