@@ -82,6 +82,12 @@ plugins=(
     zsh-completions
     zsh-autosuggestions
     zsh-syntax-highlighting
+    # cd $HOME/custom/plugins
+    # git clone https://github.com/chrissicool/zsh-256color"
+    # git clone https://github.com/esc/conda-zsh-completion"
+    # git clone https://github.com/zsh-users/zsh-completions"
+    # git clone https://github.com/zsh-users/zsh-autosuggestions"
+    # git clone https://github.com/zsh-users/zsh-syntax-highlighting"
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,7 +131,15 @@ bindkey -M main -M emacs '^H' backward-kill-word
 bindkey -M main -M emacs '^[[3;5~' kill-word
 
 # Set locale
+export LOCALE=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# Better terminal support
+export TERM=xterm-256color
+
+# Terminal GPG credential input for SSH
+export GPG_TTY=$(tty)
 
 alias rez="source ~/.zshrc"
 
