@@ -99,7 +99,7 @@ ARG GIT_CLONE="git clone --depth 10"
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm-256color
 RUN echo "Installing system libraries including python"
-RUN apt-get update && sudo apt-get install -y \
+RUN apt-get update && apt-get install -y \
     build-essential pkg-config git curl wget automake cmake libtool ca-certificates vim \
     software-properties-common tmux zsh fonts-powerline \
     libpng-dev libjpeg-dev exuberant-ctags \
